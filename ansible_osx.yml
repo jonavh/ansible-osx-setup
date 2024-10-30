@@ -17,11 +17,6 @@
       community.general.homebrew_tap:
         name: [
           adoptopenjdk/openjdk,
-          fishtown-analytics/dbt,
-          heroku/brew,
-          homebrew/cask-versions,
-          thoughtbot/formulae,
-          weaveworks/tap,
         ]
 
     - name: Install core packages via brew casks
@@ -29,76 +24,88 @@
         name: "{{ item }}"
       ignore_errors: yes
       with_items:
-        - 1password
-        - android-sdk
-        - android-studio
-        - datagrip
-        - docker
-        - dropbox
-        - figma
-        - google-chrome
-        - google-cloud-sdk
+        - android-file-transfer
+        - apache-directory-studio
+        - chromedriver
+        - dbeaver-community
+        - displaylink
+        - drawio
+        - inkscape
         - iterm2
-        - kindle
-        - ngrok
+        - microsoft-remote-desktop
+        - mongodb-compass
+        - podman-desktop
+        - powershell
         - slack
-        - sublime-text
-        - telegram
+        - spotify
+        - techsmith-capture
+        - the-unarchiver
+        - vagrant
+        - virtualbox
         - visual-studio-code
         - vlc
+        - whatsapp
+        - wireshark
+        - xquartz
         - zoom
-        - tuple
+        - rectangle
+        - onedrive
 
     - name: "Install homebrew packages"
       community.general.homebrew:
         name: [
+          'ansible',
           'autoconf',
           'automake',
-          'aws-iam-authenticator',
-          'awscli',
+          'azure-cli',
           'bfg',
           'coreutils',
           'curl',
-          'dbt@0.18.0',
-          'direnv',
-          'dnsmasq',
-          'fzf',
+          'dos2unix',
+          'go',
           'gnu-time',
+          'gnu-sed',
+          'gnu-tar',
           'gpg',
-          'heroku',
+          'helm',
+          'helm-docs',
+          'hub',
           'htop',
-          'imagemagick@6',
-          'kubectx',
+          'jq',
           'kubernetes-cli',
           'kubernetes-helm',
           'libtool',
           'libxslt',
           'libyaml',
-          'mas',
+          'git',
+          'glab',
           'openssl' ,
+          'opentofu' ,
+          'openshift-cli',
           'pkg-config',
-          'postgresql',
-          'rcm',
+          'podman',
+          'podman-compose',
+          'pwgen',
           'readline',
-          'redis',
-          'sqlite3',
           'tmux',
+          'tree',
+          'sshuttle',
           'unixodbc',
           'unzip',
           'vim',
-          'watchman',
+          'watch',
+          'wget',
           'xz',
-          'yarn',
           'zlib',
           'zsh',
         ]
         state: present
         update_homebrew: yes
 
-    - name: "Install from Mac app store"
-      shell: mas install {{ item }}
-      with_items:
-        - 497799835 # xcode
+    # - name: "Install from Mac app store"
+    #  shell: mas install {{ item }}
+    #  with_items:
+    #    - 497799835 # xcode
 
     - name: Get the path to ZSH
       become: false
@@ -145,26 +152,27 @@
     - name: Install VSCode extensions
       shell: code --install-extension {{ item }}
       with_items:
-        - apollographql.vscode-apollo
-        - bradlc.vscode-tailwindcss
-        - castwide.solargraph
-        - clinyong.vscode-css-modules
-        - eamodio.gitlens
-        - jakebecker.elixir-ls
-        - kaiwood.endwise
-        - karunamurti.haml
-        - ms-vscode-remote.vscode-remote-extensionpack
-        - ms-vscode.vscode-typescript-tslint-plugin
-        - msjsdiag.debugger-for-chrome
-        - rebornix.ruby
-        - richie5um2.vscode-sort-json
-        - Tyriar.sort-lines
+        - hashicorp.terraform
+        - ms-kubernetes-tools.vscode-kubernetes-tools
+        - ms-python.python
+        - redhat.ansible
+        - fabiospampinato.vscode-diff
+        - yzhang.markdown-all-in-one
+        - bierner.markdown-preview-github-styles
+        - mohsen1.prettify-json
+        - puppet.puppet-vscode
+        - kevinrose.vsc-python-indent
+        - redhat.vscode-commons
+        - ms-vscode-remote.remote-ssh
+        - ms-vscode.remote-explorer
+        - shardulm94.trailing-spaces
+        - iciclesoft.workspacesort
+        - redhat.vscode-yaml
+        - pascalreitermann93.vscode-yaml-sort
         - vscodevim.vim
-        - wholroyd.jinja
-        - wingrunr21.vscode-ruby
-        - xabikos.javascriptsnippets
-        - streetsidesoftware.code-spell-checker
-        - fabiospampinato.vscode-todo-plus
+        - ms-azuretools.vscode-azureterraform
+        - gamunu.opentofu
+        - gitlab.gitlab-workflow
 
     - git:
         repo: https://github.com/asdf-vm/asdf.git
