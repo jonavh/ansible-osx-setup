@@ -50,6 +50,7 @@
         - zoom
         - rectangle
         - onedrive
+        - soapui
 
     - name: "Install homebrew packages"
       community.general.homebrew:
@@ -98,6 +99,7 @@
           'xz',
           'zlib',
           'zsh',
+          'base64'
         ]
         state: present
         update_homebrew: yes
@@ -173,6 +175,7 @@
         - ms-azuretools.vscode-azureterraform
         - gamunu.opentofu
         - gitlab.gitlab-workflow
+        - github.copilot
 
     - git:
         repo: https://github.com/asdf-vm/asdf.git
