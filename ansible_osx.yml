@@ -137,17 +137,12 @@
     - name: Install VSCode extensions
       shell: code --install-extension {{ item }}
       with_items:
-        - hashicorp.terraform
-        - ms-kubernetes-tools.vscode-kubernetes-tools
         - ms-python.python
-        - redhat.ansible
         - fabiospampinato.vscode-diff
         - yzhang.markdown-all-in-one
         - bierner.markdown-preview-github-styles
         - mohsen1.prettify-json
-        - puppet.puppet-vscode
         - kevinrose.vsc-python-indent
-        - redhat.vscode-commons
         - ms-vscode-remote.remote-ssh
         - ms-vscode.remote-explorer
         - shardulm94.trailing-spaces
@@ -155,7 +150,6 @@
         - redhat.vscode-yaml
         - pascalreitermann93.vscode-yaml-sort
         - vscodevim.vim
-        - ms-azuretools.vscode-azureterraform
         - gamunu.opentofu
         - gitlab.gitlab-workflow
         - github.copilot
