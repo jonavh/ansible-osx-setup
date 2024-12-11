@@ -25,34 +25,21 @@
         name: "{{ item }}"
       ignore_errors: yes
       with_items:
-        - android-file-transfer
-        - apache-directory-studio
-        - chromedriver
-        - dbeaver-community
         - displaylink
         - drawio
         - inkscape
         - iterm2
         - microsoft-remote-desktop
-        - mongodb-compass
-        - podman-desktop
         - powershell
-        - slack
-        - spotify
         - techsmith-capture
         - the-unarchiver
-        - vagrant
         - virtualbox
         - visual-studio-code
         - vlc
-        - whatsapp
         - wireshark
-        - xquartz
         - zoom
         - rectangle
         - onedrive
-        - soapui
-        - mongodb-database-tools
 
     - name: "Install homebrew packages"
       community.general.homebrew:
